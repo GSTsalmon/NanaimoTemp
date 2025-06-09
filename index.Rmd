@@ -32,19 +32,3 @@ DOplot<- ggplot(DOSaysells2025, aes(x = Date.Time..PDT., y = Temp, colour = Site
   theme_classic()
 ggplotly(DOplot)
 ```
-
-Column {data-width=350}
------------------------------------------------------------------------
-
-### Chart B
-
-```{r}
-
-```
-
-### Chart C
-
-```{r}
-
-```
-
