@@ -19,16 +19,16 @@ Column {data-width=650}
 ### Chart A
 
 ```{r}
-DOSaysells2025 <- read.csv("https://raw.githubusercontent.com/GSTsalmon/2025Data/refs/heads/main/DOSaysell's2025.csv")
-DOSaysells2025$Date.Time..PDT. <- as.POSIXct(DOSaysells2025$Date.Time..PDT., format = "%m/%d/%Y %H:%M")
-DOSaysells2025$Site <- "WRF"
-filtered_SaysellsDOdata <- na.omit(DOSaysells2025)
+FirstLakeOutletTemp <- read.csv("https://raw.githubusercontent.com/GSTsalmon/NanaimoRiverDataRepo/refs/heads/main/FirstLakeOutletTemp2025.csv")
+FirstLakeOutletTemp$DateTime <- as.POSIXct(FirstLakeOutletTemp$DateTime, format = "%m/%d/%Y %H:%M")
+FirstLakeOutletTemp$Site <- "FirstLake"
+FirstLakeOutletTemp <- na.omit(FirstLakeOutletTemp)
 
-DOplot<- ggplot(DOSaysells2025, aes(x = Date.Time..PDT., y = Temp, colour = Site)) +
+TempPlot<- ggplot(FirstLakeOutletTemp, aes(x = DateTime, y = Temp, colour = Site)) +
   geom_point(alpha = 0.8, size = 0.9) + geom_line() +
-  scale_x_datetime(date_labels = "%e-%b", date_breaks = "2 day") +
+  scale_x_datetime(date_labels = "%e-%b", date_breaks = "5 day") +
   xlab("") + 
   ylab("°C") +
   theme_classic()
-ggplotly(DOplot)
+ggplotly(TempPlot)
 ```
