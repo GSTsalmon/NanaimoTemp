@@ -1,10 +1,11 @@
+
+
 ---
-title: "Nanaimo River Temperature Monitoring"
+title: "Nanaimo River Monitoring"
 output: 
- flexdashboard::flex_dashboard:
+  flexdashboard::flex_dashboard:
     orientation: rows
     vertical_layout: fill
-    self_contained: false 
 ---
 
 ```{r setup, include=FALSE}
@@ -13,10 +14,7 @@ library(ggplot2)
 library(plotly)
 ```
 
-Column {data-width=650}
------------------------------------------------------------------------
-
-### Chart A
+### **Temperature** {style="Color: orange"}
 
 ```{r}
 FirstLakeOutletTemp <- read.csv("https://raw.githubusercontent.com/GSTsalmon/NanaimoRiverDataRepo/refs/heads/main/FirstLakeOutletTemp2025.csv")
